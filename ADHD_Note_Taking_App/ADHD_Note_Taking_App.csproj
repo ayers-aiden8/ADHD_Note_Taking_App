@@ -8,4 +8,22 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ADHD_Note_Taking_App.Core\ADHD_Note_Taking_App.Core.csproj" />
+      <ProjectReference Include="..\ADHD_Note_Taking_App.Modules.FileHandling\ADHD_Note_Taking_App.Modules.FileHandling.csproj" />
+      <ProjectReference Include="..\ADHD_Note_Taking_App.Modules.Notes\ADHD_Note_Taking_App.Modules.Notes.csproj" />
+    </ItemGroup>
+
 </Project>
