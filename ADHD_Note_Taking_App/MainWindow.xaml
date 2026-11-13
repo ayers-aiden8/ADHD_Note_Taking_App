@@ -7,14 +7,17 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:core="clr-namespace:ADHD_Note_Taking_App.Core;assembly=ADHD_Note_Taking_App.Core"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="1080" Width="1920"
+        Background="#191919"
+        WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <ContentControl 
-            prism:RegionManager.RegionName="{x:Static core:RegionNames.NavigationRegion}"/>
+            prism:RegionManager.RegionName="{x:Static core:RegionNames.NavigationRegion}"
+            Visibility="Collapsed"/>
         <ContentControl Grid.Column="1" 
             prism:RegionManager.RegionName="{x:Static core:RegionNames.MainRegion}"/>
     </Grid>

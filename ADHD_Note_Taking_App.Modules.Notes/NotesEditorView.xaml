@@ -5,8 +5,61 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ADHD_Note_Taking_App.Modules.Notes"
              mc:Ignorable="d"
+             xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+             xmlns:mdxaml="https://github.com/whistyun/MdXaml"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <Label Content="Test"></Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="DarkGray"
+                    CornerRadius="2"
+                    Padding="7, 5,7,7"
+                    Margin="7,15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Editor"/>
+                    <Border Grid.Row="1"
+                            Background="AliceBlue"
+                            CornerRadius="2">
+                        <avalonEdit:TextEditor Grid.Row="1" 
+                                               Name="TextEditor"
+                                               Document="{Binding TextDocument}"
+                                               SyntaxHighlighting="MarkDown"
+                                               Background="Transparent"
+                                               BorderThickness="0"
+                                               VerticalScrollBarVisibility="Auto"
+                                               FontSize="14"/>
+                    </Border>
+                    
+                </Grid>
+            </Border>
+            <Border Grid.Column="1"
+                    Background="DarkGray"
+                    CornerRadius="2"
+                    Padding="7, 5,7,7"
+                    Margin=" 7, 15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Editor"/>
+                    <Border Grid.Row="1"
+                            Background="AliceBlue"
+                            CornerRadius="2">
+                        <mdxaml:MarkdownScrollViewer 
+                            Markdown="{Binding TextDocument.Text}"
+                            MarkdownStyleName="GithubLike"/>
+                    </Border>
+                    
+                </Grid> 
+            </Border>
+        </Grid>       
     </Grid>
 </UserControl>

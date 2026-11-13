@@ -7,5 +7,6 @@ public partial class NotesEditorView : UserControl
     public NotesEditorView()
     {
         InitializeComponent();
+        this.DataContext = new NotesEditorViewModel();
     }
 }

@@ -6,6 +6,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
     <ItemGroup>
+      <PackageReference Include="AvalonEdit" Version="6.3.1.120" />
+      <PackageReference Include="MdXaml" Version="2.0.0-pre202603081301" />
       <PackageReference Include="Prism.DryIoc" Version="9.0.537" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ADHD_Note_Taking_App.Core\ADHD_Note_Taking_App.Core.csproj" />
     </ItemGroup>
 </Project>
